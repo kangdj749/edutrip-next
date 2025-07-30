@@ -1,103 +1,128 @@
-import Image from "next/image";
+// src/app/page.tsx
+'use client';
 
-export default function Home() {
+import React, { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
+import { QRISModal } from '@/components/ui/qris-modal';
+import { Badge } from '@/components/ui/badge';
+import { Alert } from '@/components/ui/alert';
+import { Modal } from '@/components/ui/modal';
+
+export default function HomePage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen bg-gradient-to-b from-red-50 to-white text-gray-800 font-sans">
+      {/* Hero Section */}
+      <section className="text-center py-16 px-4 animate-fade-in-up">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-red-700 tracking-tight drop-shadow-sm">
+          Harmoni Merdeka <span className="text-gray-800">EduTrip</span>
+        </h1>
+        <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
+          Bergabunglah dalam perjalanan edukatif dan inspiratif memperingati kemerdekaan bersama anak-anak yatim dan dhuafa.
+        </p>
+        <div className="mt-6 flex justify-center">
+          <Badge className="bg-yellow-100 text-yellow-800 text-sm">Donasi Terbuka hingga 17 Agustus</Badge>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      </section>
+
+      {/* Problem Section */}
+      <section className="bg-white py-12 px-6 text-center">
+        <h2 className="text-2xl font-bold mb-4 text-red-600">Mengapa EduTrip Ini Penting?</h2>
+        <p className="max-w-2xl mx-auto text-gray-700">
+          Ratusan anak-anak belum pernah mengunjungi museum, mengenal sejarah bangsanya, atau merasakan inspirasi kemerdekaan. EduTrip ini adalah solusi untuk memberikan mereka pengalaman berharga yang menumbuhkan cinta tanah air dan semangat berbagi.
+        </p>
+      </section>
+
+      {/* Solution Section */}
+      <section className="py-12 px-6 bg-red-50">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Pilih Peranmu dalam Kebaikan</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <Card>
+            <CardContent className="space-y-4">
+              <h3 className="text-xl font-semibold text-red-700">Donatur Personal</h3>
+              <p className="text-sm text-gray-700">Berikan bantuan terbaikmu:</p>
+              <ul className="text-sm text-gray-600 list-disc list-inside">
+                <li>Paket A - Rp100.000 (Transportasi & Konsumsi)</li>
+                <li>Paket B - Rp300.000 (Santunan & Bingkisan)</li>
+                <li>Nominal Bebas</li>
+              </ul>
+              <Button className="w-full bg-red-600 hover:bg-red-700">Donasi Sekarang</Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="space-y-4">
+              <h3 className="text-xl font-semibold text-yellow-600">Partner / Sponsor</h3>
+              <p className="text-sm text-gray-700">Dukung dengan kontribusi institusi Anda:</p>
+              <ul className="text-sm text-gray-600 list-disc list-inside">
+                <li>Platinum &gt; Rp20jt (Booth, logo besar, publikasi media)</li>
+                <li>Gold Rp10–19jt (Logo, booth opsional)</li>
+                <li>Silver Rp5–9jt (Logo Sosmed & Sertifikat)</li>
+              </ul>
+              <Button className="w-full bg-yellow-500 hover:bg-yellow-600">Ajukan Partnership</Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* CTA & Form Section */}
+      <section className="py-12 px-6 bg-white">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Tinggalkan Dukunganmu</h2>
+        <div className="max-w-xl mx-auto">
+          <Alert
+            title="Perhatian"
+            message="Donasi hanya melalui rekening resmi kami atau QRIS yang tersedia."
+            className="mb-4"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          <Card className="shadow-xl border-red-200">
+            <CardContent>
+              <form className="space-y-4">
+                <Input placeholder="Nama Anda" className="transition focus:scale-105 duration-150" />
+                <Textarea placeholder="Pesan / Dukungan" className="transition focus:scale-105 duration-150" />
+                <Button type="submit" className="w-full bg-red-600 hover:bg-red-700 transition-all duration-200">
+                  Kirim Dukungan
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Galeri & Testimoni Section */}
+      <section className="py-12 px-6 bg-gray-50">
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Galeri & Testimoni</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+          <img src="/galeri1.jpg" alt="Galeri EduTrip" className="rounded shadow-md" />
+          <img src="/galeri2.jpg" alt="Galeri EduTrip" className="rounded shadow-md" />
+          <img src="/galeri3.jpg" alt="Galeri EduTrip" className="rounded shadow-md" />
+        </div>
+        <div className="max-w-2xl mx-auto mt-8 text-center">
+          <blockquote className="text-gray-600 italic">“Anak-anak sangat antusias, ini pengalaman pertama mereka naik bus wisata dan ke museum! Terima kasih para donatur.”</blockquote>
+          <p className="mt-2 font-semibold text-gray-700">— Relawan EduTrip 2024</p>
+        </div>
+      </section>
+
+      {/* Modal Button */}
+      <div className="text-center my-10">
+        <Button onClick={() => setModalOpen(true)} className="bg-yellow-500 hover:bg-yellow-600">
+          Lihat Ucapan Merdeka
+        </Button>
+      </div>
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+        <div className="text-center">
+          <h2 className="text-xl font-bold mb-2 text-red-600">Selamat Menyambut Hari Kemerdekaan!</h2>
+          <p className="text-gray-700">Mari wujudkan generasi tangguh melalui EduTrip!</p>
+        </div>
+      </Modal>
+
+      {/* Floating Action */}
+      <FloatingWhatsApp />
+      <QRISModal />
+    </main>
   );
 }
