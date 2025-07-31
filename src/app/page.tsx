@@ -11,6 +11,7 @@ import { QRISModal } from '@/components/ui/qris-modal';
 import { Badge } from '@/components/ui/badge';
 import { Alert } from '@/components/ui/alert';
 import { Modal } from '@/components/ui/modal';
+import Image from "next/image";
 
 export default function HomePage() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -97,9 +98,35 @@ export default function HomePage() {
       <section className="py-12 px-6 bg-gray-50">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Galeri & Testimoni</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-          <img src="/galeri1.jpg" alt="Galeri EduTrip" className="rounded shadow-md" />
-          <img src="/galeri2.jpg" alt="Galeri EduTrip" className="rounded shadow-md" />
-          <img src="/galeri3.jpg" alt="Galeri EduTrip" className="rounded shadow-md" />
+          <Image
+                src="/galeri1.jpg"
+                alt="Galeri EduTrip"
+                width={400}
+                height={300}
+                className="rounded shadow-md"
+              />
+          <Image
+                src="/galeri2.jpg"
+                alt="Galeri EduTrip"
+                width={400}
+                height={300}
+                className="rounded shadow-md"
+              />
+          <Image
+                src="/galeri3.jpg"
+                alt="Galeri EduTrip"
+                width={400}
+                height={300}
+                className="rounded shadow-md"
+              />
+          <Image
+                src="/galeri4.jpg"
+                alt="Galeri EduTrip"
+                width={400}
+                height={300}
+                className="rounded shadow-md"
+              />           
+          
         </div>
         <div className="max-w-2xl mx-auto mt-8 text-center">
           <blockquote className="text-gray-600 italic">“Anak-anak sangat antusias, ini pengalaman pertama mereka naik bus wisata dan ke museum! Terima kasih para donatur.”</blockquote>
