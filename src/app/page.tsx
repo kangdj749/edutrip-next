@@ -99,28 +99,42 @@ export default function HomePage() {
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Galeri & Testimoni</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
           <Image
-                src="/galeri1.jpg"
+                src="/galeri1.jpeg"
                 alt="Galeri EduTrip"
                 width={400}
                 height={300}
                 className="rounded shadow-md"
               />
           <Image
-                src="/galeri2.jpg"
+                src="/galeri2.jpeg"
                 alt="Galeri EduTrip"
                 width={400}
                 height={300}
                 className="rounded shadow-md"
               />
           <Image
-                src="/galeri3.jpg"
+                src="/galeri3.jpeg"
                 alt="Galeri EduTrip"
                 width={400}
                 height={300}
                 className="rounded shadow-md"
               />
           <Image
-                src="/galeri4.jpg"
+                src="/galeri4.jpeg"
+                alt="Galeri EduTrip"
+                width={400}
+                height={300}
+                className="rounded shadow-md"
+              />           
+          <Image
+                src="/galeri5.jpeg"
+                alt="Galeri EduTrip"
+                width={400}
+                height={300}
+                className="rounded shadow-md"
+              />           
+          <Image
+                src="/galeri6.jpeg"
                 alt="Galeri EduTrip"
                 width={400}
                 height={300}
