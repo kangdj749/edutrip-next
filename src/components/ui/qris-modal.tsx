@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export const QRISModal = () => {
   const [open, setOpen] = useState(false);
@@ -19,10 +20,11 @@ export const QRISModal = () => {
               className="absolute top-2 right-3 text-gray-500 hover:text-gray-800"
               onClick={() => setOpen(false)}
             >
-              ×
+              
             </button>
             <h3 className="text-lg font-bold mb-4">Scan QRIS untuk Donasi</h3>
-            <img src="/qris.jpg" alt="QRIS Donasi" className="w-full rounded-lg shadow" />
+            <Image src="/qris.jpg" alt="QRIS Donasi" className="w-full rounded-lg shadow" />
+              
           </div>
         </div>
       )}

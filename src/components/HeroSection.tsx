@@ -1,8 +1,7 @@
-import Lottie from "lottie-react";
-import celebrationAnimation from "@/assets/lottie/celebration.json";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 
 
 export default function HeroSection() {
@@ -25,12 +24,12 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Bendera animasi kiri dan kanan */}
-      <img
+      <Image
         src="/bendera2.png"
         alt="Bendera Kiri"
         className="absolute left-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle"
       />
-      <img
+      <Image
         src="/bendera.png"
         alt="Bendera Kanan"
         className="absolute right-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle"
@@ -38,9 +37,9 @@ export default function HeroSection() {
 
       {/* Header logo */}
       <header className="relative z-10 flex items-center justify-between px-6 py-4 animate-fadeInDown">
-        <img src="/logo-yayasan.png" alt="Logo Yayasan" className="h-12 w-auto" />
+        <Image src="/logo-yayasan.png" alt="Logo Yayasan" className="h-12 w-auto" />
         <p className="text-white text-xs md:text-sm font-medium mx-2 text-center flex-1">LAZ GDI Present</p>
-        <img src="/logo-event.png" alt="Logo Event" className="h-10 w-auto" />
+        <Image src="/logo-event.png" alt="Logo Event" className="h-10 w-auto" />
       </header>
 
       {/* Hero Text */}
@@ -73,7 +72,7 @@ export default function HeroSection() {
         
         {/* Ilustrasi Animasi Pengganti Lottie */}
           <div className="w-40 md:w-56 mt-6 animate-float-slow">
-            <img src="/celebration.svg" alt="Perayaan Kemerdekaan" className="mx-auto animate-pulse-slow" />
+            <Image src="/celebration.svg" alt="Perayaan Kemerdekaan" className="mx-auto animate-pulse-slow" />
           </div>
       </div>
 
