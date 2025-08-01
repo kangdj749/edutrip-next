@@ -9,7 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-tabs": "^1.1.12",
+    "googleapis": "^154.1.0",
+    "keen-slider": "^6.8.6",
+    "lottie-react": "^2.4.1",
+    "lucide-react": "^0.536.0",
     "next": "15.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0"
