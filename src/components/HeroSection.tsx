@@ -44,7 +44,7 @@ export default function HeroSection() {
         <h1 className="text-5xl md:text-8xl font-extrabold text-white animate-bounce delay-150 leading-none">MERDEKA</h1>
 
         <p className="text-3xl md:text-4xl font-semibold bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent mt-4 fade-in delay-300 max-w-3xl">
-            Cinta Al-Qur'an. Cinta Negeri
+            Cinta Al-Quran. Cinta Negeri
         </p>
 
         <p className="text-xs md:text-sm text-white mt-2 fade-in delay-500">Minggu, 24 Agustus 2025</p>

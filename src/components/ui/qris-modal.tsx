@@ -23,7 +23,7 @@ export const QRISModal = () => {
               
             </button>
             <h3 className="text-lg font-bold mb-4">Scan QRIS untuk Donasi</h3>
-            <Image src="/qris.jpg" alt="QRIS Donasi" className="w-full rounded-lg shadow" />
+            <Image src="/qris.jpg" alt="QRIS Donasi" width={500} height={500} className="w-full rounded-lg shadow" />
               
           </div>
         </div>
