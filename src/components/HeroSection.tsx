@@ -24,22 +24,14 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Bendera animasi kiri dan kanan */}
-      <Image
-        src="/bendera2.png"
-        alt="Bendera Kiri"
-        className="absolute left-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle"
-      />
-      <Image
-        src="/bendera.png"
-        alt="Bendera Kanan"
-        className="absolute right-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle"
-      />
+      <Image src="/bendera2.png" alt="Bendera Kiri" width={100} height={100} className="absolute left-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle" />
+      <Image src="/bendera.png" alt="Bendera Kanan" width={100} height={100} className="absolute right-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle" />
 
       {/* Header logo */}
       <header className="relative z-10 flex items-center justify-between px-6 py-4 animate-fadeInDown">
-        <Image src="/logo-yayasan.png" alt="Logo Yayasan" className="h-12 w-auto" />
+        <Image src="/logo-yayasan.png" alt="Logo Yayasan" width={50} height={50} className="h-12 w-auto" />
         <p className="text-white text-xs md:text-sm font-medium mx-2 text-center flex-1">LAZ GDI Present</p>
-        <Image src="/logo-event.png" alt="Logo Event" className="h-10 w-auto" />
+        <Image src="/logo-event.png" alt="Logo Event" width={50} height={50} className="h-10 w-auto" />
       </header>
 
       {/* Hero Text */}
@@ -72,7 +64,7 @@ export default function HeroSection() {
         
         {/* Ilustrasi Animasi Pengganti Lottie */}
           <div className="w-40 md:w-56 mt-6 animate-float-slow">
-            <Image src="/celebration.svg" alt="Perayaan Kemerdekaan" className="mx-auto animate-pulse-slow" />
+            <Image src="/celebration.svg" alt="Perayaan Kemerdekaan" width={200} height={200} className="mx-auto animate-pulse-slow" />
           </div>
       </div>
 

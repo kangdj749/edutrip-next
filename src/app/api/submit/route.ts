@@ -2,8 +2,16 @@
 import { google } from 'googleapis';
 import { NextRequest, NextResponse } from 'next/server';
 
+interface FormData {
+  nama: string;
+  email?: string;
+  wa: string;
+  alamat?: string;
+  tipe: 'personal' | 'partnership';
+}
+
 export async function POST(req: NextRequest) {
-  const { nama, email, wa, alamat, tipe } = await req.json();
+  const { nama, email, wa, alamat, tipe }: FormData = await req.json();
 
   if (!nama || !wa || !tipe) {
     return NextResponse.json({ status: 'error', message: 'Data wajib tidak lengkap' }, { status: 400 });
@@ -16,7 +24,7 @@ export async function POST(req: NextRequest) {
   const auth = new google.auth.GoogleAuth({
     credentials: {
       client_email: process.env.GS_CLIENT_EMAIL,
-      private_key: process.env.GS_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+      private_key: process.env.GS_PRIVATE_KEY?.replace(/\n/g, '\n'),
     },
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
   });
@@ -44,8 +52,9 @@ export async function POST(req: NextRequest) {
 
     console.log('GSheet response:', res.status);
     return NextResponse.json({ status: 'success' });
-  } catch (err: any) {
-    console.error('GSheet error:', err.response?.data || err.message || err);
+  } catch (err) {
+    const error = err as { response?: { data?: unknown }; message?: string };
+    console.error('GSheet error:', error.response?.data || error.message || error);
     return NextResponse.json({ status: 'error', message: 'Gagal menyimpan ke Google Sheet' }, { status: 500 });
   }
 }

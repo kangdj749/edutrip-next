@@ -1,7 +1,7 @@
 // src/app/page.tsx
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
@@ -14,6 +14,7 @@ import { FloatingWhatsApp } from '@/components/ui/floating-whatsapp';
 import { QRISModal } from '@/components/ui/qris-modal';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import HeroSection from '@/components/HeroSection';
+import { KeenSliderInstance } from 'keen-slider';
 
 export default function HomePage() {
   const [formType, setFormType] = useState<'personal' | 'partnership'>('personal');
@@ -27,7 +28,10 @@ export default function HomePage() {
   const [loading, setLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({ nama: false, wa: false, alamat: false });
 
-  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
+  const [sliderRef, slider]: [
+    (node: HTMLDivElement | null) => void,
+    React.MutableRefObject<KeenSliderInstance | null>
+  ] = useKeenSlider<HTMLDivElement>({
     loop: true,
     mode: 'snap',
     slides: {
@@ -83,7 +87,7 @@ export default function HomePage() {
       document.body.removeChild(anchor);
 
       const adminWa = '6281224128899';
-      const msg = `Assalamu\u0026#39;alaikum. Saya minat berkontribusi di event Edutrip.\nNama: ${formData.nama}\nTipe: ${formType}\nWA: ${formData.wa}`;
+      const msg = `Assalamu'alaikum. Saya minat berkontribusi di event Edutrip.\nNama: ${formData.nama}\nTipe: ${formType}\nWA: ${formData.wa}`;
       const url = `https://wa.me/${adminWa}?text=${encodeURIComponent(msg)}`;
       window.location.href = url;
     } catch (error) {
@@ -93,7 +97,6 @@ export default function HomePage() {
       setLoading(false);
     }
   };
-
   return (
     <main className="min-h-screen bg-gradient-to-b from-red-50 to-white text-gray-800 font-sans">
       <HeroSection />
@@ -151,8 +154,9 @@ export default function HomePage() {
                 <li>Santunan & Bingkisan Anak: Rp 30.000.000</li>
                 <li>Merchandise: Rp 2.500.000</li>
                 <li>Dokumentasi & Publikasi: Rp 1.500.000</li>
+                <li>Tiket Masuk Anak + Relawan: Rp 600.000</li>
               </ul>
-              <p className="font-semibold text-yellow-700 text-lg">Total Target: Rp 48.500.000</p>
+              <p className="font-semibold text-yellow-700 text-lg">Total Target: Rp 49.100.000</p>
             </CardContent>
           </Card>
 
