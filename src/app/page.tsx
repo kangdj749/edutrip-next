@@ -119,7 +119,7 @@ export default function HomePage() {
             {
               title: "Penampilan Tari",
               desc: "Penampilan seni tari dari Sanggar Seni Sri Baduga",
-              icon: "💃",
+              icon: "🧕",
             },
             {
               title: "Beasiswa Prestasi",
