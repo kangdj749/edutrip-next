@@ -240,7 +240,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Video Realisasi</h2>
         <div className="max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg animate-fadeInUp">
           <iframe
-            src="https://www.youtube.com/embed/d8XE4uiZ_qc"
+            src="https://www.youtube.com/embed/H2ZtmScM_vY"
             title="Video Realisasi EduTrip"
             className="w-full h-full"
             allowFullScreen
