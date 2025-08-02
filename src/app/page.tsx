@@ -238,7 +238,7 @@ export default function HomePage() {
       {/* Section Video Embed */}
       <section className="py-16 px-6 bg-white">
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Video Realisasi</h2>
-        <div className="max-w-5xl mx-auto aspect-video rounded-xl overflow-hidden shadow-lg animate-fadeInUp">
+        <div className="mx-auto aspect-[9/16] md:aspect-video w-full max-w-sm md:max-w-5xl rounded-xl overflow-hidden shadow-lg animate-fadeInUp">
           <iframe
             src="https://www.youtube.com/embed/H2ZtmScM_vY"
             title="Video Realisasi EduTrip"
@@ -246,6 +246,7 @@ export default function HomePage() {
             allowFullScreen
           ></iframe>
         </div>
+
       </section>
 
 
