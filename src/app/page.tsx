@@ -198,10 +198,10 @@ export default function HomePage() {
             Silakan isi data dengan benar dan proposal event langsung terunduh (PDF).
           </p>
           <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
-            <input name="nama" value={formData.nama} onChange={handleChange} type="text" placeholder="Nama" required className={`w-full p-3 rounded-lg border ${formErrors.nama ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-400 focus:outline-none`} />
-            <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email (Opsional)" className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
-            <input name="wa" value={formData.wa} onChange={handleChange} type="text" placeholder="No WhatsApp" required className={`w-full p-3 rounded-lg border ${formErrors.wa ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-400 focus:outline-none`} />
-            <input name="alamat" value={formData.alamat} onChange={handleChange} type="text" placeholder="Alamat" required className={`w-full p-3 rounded-lg border ${formErrors.alamat ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-400 focus:outline-none`} />
+            <input name="nama" value={formData.nama} onChange={handleChange} type="text" placeholder="Nama" required className={`w-full p-3 rounded-lg border ${formErrors.nama ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-600 focus:outline-none`} />
+            <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email (Opsional)" className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-600 focus:outline-none" />
+            <input name="wa" value={formData.wa} onChange={handleChange} type="text" placeholder="No WhatsApp" required className={`w-full p-3 rounded-lg border ${formErrors.wa ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-600 focus:outline-none`} />
+            <input name="alamat" value={formData.alamat} onChange={handleChange} type="text" placeholder="Alamat" required className={`w-full p-3 rounded-lg border ${formErrors.alamat ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-600 focus:outline-none`} />
             {/* Infak Terbaik untuk personal */}
             {formType === 'personal' && (
               <select
@@ -209,7 +209,7 @@ export default function HomePage() {
                 value={formData.infak}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-600 focus:outline-none"
               >
                 <option value="">Pilih Infak Terbaik</option>
                 <option value="10000">Rp10.000</option>
@@ -228,7 +228,7 @@ export default function HomePage() {
                 value={formData.paket}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-600 focus:outline-none"
               >
                 <option value="">Pilih Rencana Paket</option>
                 <option value="Platinum">Platinum (≥ Rp20jt – Booth, logo besar, media publikasi)</option>
