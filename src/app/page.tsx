@@ -91,7 +91,7 @@ export default function HomePage() {
       document.body.removeChild(anchor);
 
       const adminWa = '6281322817712';
-      const msg = `Assalamu'alaikum. Saya minat berkontribusi di event Edutrip.\nNama: ${formData.nama}\nTipe: ${formType}\nWA: ${formData.wa}`;
+      const msg = `Assalamu'alaikum. Saya minat berkontribusi di event Edutrip.\nNama: ${formData.nama}\nTipe: ${formType}\nWA: ${formData.wa}\nInfak: ${formData.infak}`;
       const url = `https://wa.me/${adminWa}?text=${encodeURIComponent(msg)}`;
       window.location.href = url;
     } catch (error) {
