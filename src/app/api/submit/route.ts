@@ -7,17 +7,20 @@ interface FormData {
   email?: string;
   wa: string;
   alamat?: string;
+  fr: string;
+  infak: string;
+  paket: string;
   tipe: 'personal' | 'partnership';
 }
 
 export async function POST(req: NextRequest) {
-  const { nama, email, wa, alamat, tipe }: FormData = await req.json();
+  const { nama, email, wa, alamat, fr, infak, paket,tipe }: FormData = await req.json();
 
   if (!nama || !wa || !tipe) {
     return NextResponse.json({ status: 'error', message: 'Data wajib tidak lengkap' }, { status: 400 });
   }
 
-  console.log('Incoming data:', { nama, email, wa, alamat, tipe });
+  console.log('Incoming data:', { nama, email, wa, alamat, fr, infak, paket, tipe});
   console.log('GS_CLIENT_EMAIL:', process.env.GS_CLIENT_EMAIL);
   console.log('GS_SHEET_ID:', process.env.GS_SHEET_ID);
 
@@ -45,6 +48,10 @@ export async function POST(req: NextRequest) {
             email || '',
             wa,
             alamat || '',
+            fr,
+            infak || '',
+            paket,
+      
           ],
         ],
       },

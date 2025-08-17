@@ -1,7 +1,7 @@
 // src/app/page.tsx
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect, ChangeEvent } from 'react';
 import Image from 'next/image';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
@@ -24,7 +24,11 @@ export default function HomePage() {
     email: '',
     wa: '',
     alamat: '',
+    fr: '',
+    infak: '', 
+    paket: '',
   });
+    
   const [loading, setLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({ nama: false, wa: false, alamat: false });
 
@@ -48,10 +52,10 @@ export default function HomePage() {
     },
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+  
   const validateForm = () => {
     const errors = {
       nama: !formData.nama.trim(),
@@ -162,7 +166,7 @@ export default function HomePage() {
 
           <Card>
             <CardContent className="space-y-4">
-              <h3 className="text-xl font-semibold text-yellow-800">Partner / Sponsor</h3>
+              <h3 className="text-xl font-semibold text-yellow-800">Donatur Partnership</h3>
               <ul className="text-sm text-gray-700 list-disc list-inside">
                 <li><strong>Platinum</strong> ≥ Rp 20jt – Booth, logo besar, media publikasi</li>
                 <li><strong>Gold</strong> Rp 10–19jt – Logo, booth opsional</li>
@@ -198,6 +202,40 @@ export default function HomePage() {
             <input name="email" value={formData.email} onChange={handleChange} type="email" placeholder="Email (Opsional)" className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:outline-none" />
             <input name="wa" value={formData.wa} onChange={handleChange} type="text" placeholder="No WhatsApp" required className={`w-full p-3 rounded-lg border ${formErrors.wa ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-400 focus:outline-none`} />
             <input name="alamat" value={formData.alamat} onChange={handleChange} type="text" placeholder="Alamat" required className={`w-full p-3 rounded-lg border ${formErrors.alamat ? 'border-red-400' : 'border-gray-300'} focus:ring-2 focus:ring-yellow-400 focus:outline-none`} />
+            {/* Infak Terbaik untuk personal */}
+            {formType === 'personal' && (
+              <select
+                name="infak"
+                value={formData.infak}
+                onChange={handleChange}
+                required
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+              >
+                <option value="">Pilih Infak Terbaik</option>
+                <option value="10000">Rp10.000</option>
+                <option value="50000">Rp50.000</option>
+                <option value="100000">Rp100.000</option>
+                <option value="200000">Rp200.000</option>
+                <option value="500000">Rp500.000</option>
+                <option value=">500000">&gt; Rp500.000</option>
+              </select>
+            )}
+
+            {/* Rencana Paket untuk partnership */}
+            {formType === 'partnership' && (
+              <select
+                name="paket"
+                value={formData.paket}
+                onChange={handleChange}
+                required
+                className="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+              >
+                <option value="">Pilih Rencana Paket</option>
+                <option value="Platinum">Platinum (≥ Rp20jt – Booth, logo besar, media publikasi)</option>
+                <option value="Gold">Gold (Rp10–19jt – Logo, booth opsional)</option>
+                <option value="Silver">Silver (Rp5–9jt – Logo Sosmed & Sertifikat)</option>
+              </select>
+            )}
             <Button type="submit" disabled={loading} className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold text-lg py-3 rounded-lg transition-transform duration-300 transform hover:scale-105">
               {loading ? 'Mengirim...' : 'Kirim Registrasi'}
             </Button>
