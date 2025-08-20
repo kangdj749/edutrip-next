@@ -19,7 +19,7 @@ export default function HeroSection() {
   return (
     <div
       className="relative bg-cover bg-center min-h-screen overflow-hidden"
-      style={{ backgroundImage: "url('/bg-hero.png')" }}
+      style={{ backgroundImage: "url('/bgedutrip1.png')" }}
     >
       <div className="absolute inset-0 bg-black/50 z-0" />
 
@@ -29,7 +29,7 @@ export default function HeroSection() {
 
       {/* Header logo */}
       <header className="relative z-10 flex items-center justify-between px-6 py-4 animate-fadeInDown">
-        <Image src="/logo-yayasan.png" alt="Logo Yayasan" width={50} height={50} className="h-12 w-auto" />
+       <Image src="/logo-yayasan.png" alt="Logo Yayasan" width={50} height={50} className="h-12 w-auto" />
         <p className="text-white text-xs md:text-sm font-medium mx-2 text-center flex-1">LAZ GDI Present</p>
         <Image src="/logo-event.png" alt="Logo Event" width={50} height={50} className="h-10 w-auto" />
       </header>
