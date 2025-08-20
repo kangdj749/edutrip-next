@@ -24,8 +24,8 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Bendera animasi kiri dan kanan */}
-      <Image src="/bendera2.png" alt="Bendera Kiri" width={100} height={100} className="absolute left-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle" />
-      <Image src="/bendera.png" alt="Bendera Kanan" width={100} height={100} className="absolute right-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle" />
+      <Image src="/benderan2.png" alt="Bendera Kiri" width={100} height={100} className="absolute left-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle" />
+      <Image src="/benderan1.png" alt="Bendera Kanan" width={100} height={100} className="absolute right-0 top-1/2 transform -translate-y-1/2 h-20 w-auto animate-wiggle" />
 
       {/* Header logo */}
       <header className="relative z-10 flex items-center justify-between px-6 py-4 animate-fadeInDown">
