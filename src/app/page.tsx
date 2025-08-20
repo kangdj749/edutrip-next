@@ -15,6 +15,7 @@ import { QRISModal } from '@/components/ui/qris-modal';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import HeroSection from '@/components/HeroSection';
 import { KeenSliderInstance } from 'keen-slider';
+import HeroBg from '@/components/Hero2';
 
 export default function HomePage() {
   const [formType, setFormType] = useState<'personal' | 'partnership'>('personal');
@@ -104,13 +105,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-red-50 to-white text-gray-800 font-sans">
       <HeroSection />
-      <div className="relative w-full min-h-screen">
-      <img
-        src="/bgedutrip2.png"
-        alt="Background"
-        className="w-full h-full object-contain object-top"
-      />
-    </div>
+      <HeroBg/>
        {/* Section Agenda Acara */}
       <section className="bg-white py-20 px-6 md:px-16">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-yellow-700 mb-12">Agenda Acara</h2>
